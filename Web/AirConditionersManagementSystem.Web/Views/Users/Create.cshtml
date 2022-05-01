@@ -1,0 +1,31 @@
+﻿@using AirConditionersManagementSystem.Web.ViewModels.ApplicationUsers
+@model InputApplicationUserModel
+
+<h1 style="text-align: center;">Create</h1>
+
+<h4 style="text-align: center;">Create Product Form</h4>
+<hr />
+<div class="row" style="justify-content: center;">
+    <div class="col-md-4">
+        <form asp-controller="Users" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="text-align: center; font: bold;">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+                 <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <label asp-for="Role" class="control-label"></label><label>You can choose ( Customer, Technician, Administrator)</label>
+                <input asp-for="Role" class="form-control" />
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="text-align: center;">
+                <input type="submit" style="background-color: orange;" value="Create User" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

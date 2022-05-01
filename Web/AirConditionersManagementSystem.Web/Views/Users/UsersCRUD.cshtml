@@ -1,0 +1,47 @@
+﻿@using AirConditionersManagementSystem.Web.ViewModels.ApplicationUsers
+@model AllUsersViewModel
+
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>All Users</h1>
+
+<p>
+    <a asp-action="Create">Create User</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Users) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                <a asp-controller="Users" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                <a asp-controller="Users" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
