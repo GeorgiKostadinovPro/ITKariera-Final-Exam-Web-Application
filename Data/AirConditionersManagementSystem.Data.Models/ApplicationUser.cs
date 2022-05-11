@@ -18,6 +18,7 @@ namespace AirConditionersManagementSystem.Data.Models
             this.Logins = new HashSet<IdentityUserLogin<string>>();
 
             this.Requests = new HashSet<Request>();
+            this.VisitedRequests = new HashSet<Request>();
         }
 
         public ICollection<Request> Requests { get; set; }

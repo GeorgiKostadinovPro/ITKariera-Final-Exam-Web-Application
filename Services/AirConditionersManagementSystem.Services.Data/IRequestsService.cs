@@ -12,6 +12,10 @@ namespace AirConditionersManagementSystem.Services.Data
         Task CreateRequest(InputRequestModel requestModel);
 
         Task DeleteRequest(string requestId);
+
+        Task UpdateRequest(string requestId, InputRequestModel inputRequestModel);
+
+        InputRequestModel GetRequestById(string requestId);
         ICollection<RequestViewModel> GetAllRequests();
     }
 }

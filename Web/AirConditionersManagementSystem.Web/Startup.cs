@@ -67,7 +67,7 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
             services.AddTransient<IApplicationUsersService, ApplicationUsersService>();
-            services.AddTransient<IRequestsService, RequestService>();
+            services.AddTransient<IRequestsService, RequestsService>();
 
 
             services.Configure<IdentityOptions>(options =>

@@ -1,16 +1,18 @@
 ﻿@using AirConditionersManagementSystem.Web.ViewModels.Requests
 @model InputRequestModel
 
-<h1 style="text-align: center;">Create</h1>
+<h1 style="text-align: center;">Update</h1>
 
-<h4 style="text-align: center;">Create Request Form</h4>
+<h4 style="text-align: center;">Update Request Form</h4>
+
 <hr />
+
 <div class="row" style="justify-content: center;">
     <div class="col-md-4">
-        <form asp-controller="Requests" asp-action="Create" method="post">
+        <form asp-controller="Requests" asp-action="Update" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" style="text-align: center; font: bold;">
-                <label asp-for="Name" class="control-label"></label>
+               <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
                  <label asp-for="Description" class="control-label"></label>
@@ -22,14 +24,14 @@
                 <label asp-for="Address" class="control-label"></label>
                 <input asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
-                <label asp-for="Status" class="control-label"></label> <label>( Waiting )</label>
+                <label asp-for="Status" class="control-label"></label> <label>: You can update to ExpectingAVisit, InProgess or Finished</label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group" style="text-align: center;">
-                <input type="submit" style="background-color: orange;" value="Create Request" class="btn btn-primary" />
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" style="background-color: orange;" value="Update Request" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-

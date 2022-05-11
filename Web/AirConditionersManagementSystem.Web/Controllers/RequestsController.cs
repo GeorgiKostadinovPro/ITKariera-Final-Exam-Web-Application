@@ -37,7 +37,29 @@ namespace AirConditionersManagementSystem.Web.Controllers
 
         public async Task<IActionResult> Delete(string id)
         { 
-            this.requestsService.DeleteRequest(id);
+            await this.requestsService.DeleteRequest(id);
+            return this.RedirectToAction("GetAllRequestsForUser", "Requests");
+        }
+
+
+        [HttpGet]
+        public IActionResult Update(string id)
+        {
+            var inputModel = this.requestsService.GetRequestById(id);
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(string id, InputRequestModel requestModel)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                requestModel.Id = id;
+                return this.View(requestModel);
+            }
+
+            await this.requestsService.UpdateRequest(id, requestModel);
+
             return this.RedirectToAction("GetAllRequestsForUser", "Requests");
         }
 

@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 
 namespace AirConditionersManagementSystem.Services.Data
 {
-    public class RequestService : IRequestsService
+    public class RequestsService : IRequestsService
     {
         private readonly ApplicationDbContext dbContext;
         private readonly IHttpContextAccessor httpContextAccessor;
         private ApplicationUser currentUser;
 
-        public RequestService(ApplicationDbContext dbContext, IHttpContextAccessor httpContextAccessor)
+        public RequestsService(ApplicationDbContext dbContext, IHttpContextAccessor httpContextAccessor)
         {
             this.dbContext = dbContext;
             this.currentUser = this.dbContext.Users.Where(user => user.Id == httpContextAccessor.HttpContext.User
@@ -55,12 +55,45 @@ namespace AirConditionersManagementSystem.Services.Data
         {
             return this.dbContext.Requests
                 .Select(r => new RequestViewModel
-                { 
-                   Id = r.UserId,
+                {
+                   Id = r.Id,
                    Name = r.Name,
                    Status = r.Status.ToString(),
                 })
                 .ToList();
+        }
+
+        public InputRequestModel GetRequestById(string requestId)
+        {
+            Request request = this.dbContext.Requests
+                .FirstOrDefault(r => r.Id.Equals(requestId));
+
+            InputRequestModel inputRequestModel = new InputRequestModel
+            {
+                Id = requestId,
+                Name = request.Name,
+                Address = request.Address,
+                Image = request.Image,
+                Description = request.Description,
+                Status = request.Status.ToString(),
+            };
+
+            return inputRequestModel;
+        }
+
+        public async Task UpdateRequest(string requestId, InputRequestModel inputRequestModel)
+        {
+            Request request = this.dbContext.Requests
+                .FirstOrDefault(r => r.Id.Equals(requestId));
+
+            request.Id = inputRequestModel.Id;
+            request.Name = inputRequestModel.Name;
+            request.Address = inputRequestModel.Address;
+            request.Description = inputRequestModel.Description;
+            request.Image = inputRequestModel.Image;
+            request.Status = (RequestStatus)Enum.Parse(typeof(RequestStatus), inputRequestModel.Status);
+
+            await this.dbContext.SaveChangesAsync();
         }
     }
 }
