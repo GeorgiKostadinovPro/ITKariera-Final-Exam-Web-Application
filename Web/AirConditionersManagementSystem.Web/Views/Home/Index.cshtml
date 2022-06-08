@@ -8,14 +8,17 @@
     <p>Welcome to my website for airconditioners!</p>
 </div>
 
-<div class="form-group" style="text-align: center;">
-               <a asp-controller="Users" asp-action="UsersCRUD">All Users</a>
+<link rel="stylesheet" href="~/css/home-page-button-style.css">
+
+
+          <div class="form-group" style="text-align: center;">
+                 <a asp-controller="Users" asp-action="UsersCRUD" class="button">All Users</a>
             </div>
 
             <div class="form-group" style="text-align: center;">
-               <a asp-controller="Requests" asp-action="Create">Create Request</a>
+               <a asp-controller="Requests" asp-action="Create" class="button">Create Request</a>
             </div>
 
             <div class="form-group" style="text-align: center;">
-               <a asp-controller="Requests" asp-action="GetAllRequestsForUser">View Request</a>
+               <a asp-controller="Requests" asp-action="GetAllRequestsForUser" class="button">View Requests</a>
             </div>
