@@ -32,13 +32,14 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+            <p></p>
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
     </div>
     <div class="col-md-6 col-md-offset-2">
         <section>
             <h3>Use another service to register.</h3>
-            <hr />
+            <hr/>
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
