@@ -23,6 +23,14 @@ There are three roles in the application:
 
 - Client - can create requests, view them and update his only requests.
 
+Register page:
+
+![image](https://user-images.githubusercontent.com/72508846/172610816-e146b3f5-11cc-4fd7-9be9-701f2e687f61.png)
+
+Log in page:
+
+![image](https://user-images.githubusercontent.com/72508846/172610959-b7165ddc-47eb-47a3-826f-689fdb38a2d2.png)
+
 Home page:
 
 ![image](https://user-images.githubusercontent.com/72508846/172591870-36fbd195-13fa-45de-83cb-d53e80e669db.png)
