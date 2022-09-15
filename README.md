@@ -54,9 +54,19 @@ On the home page therare several buttons which execute the main functionality.
 
 CRUD for Users:
 
-- Update Users
+- Create User
+
+![image](https://user-images.githubusercontent.com/72508846/190399466-51d0d53d-4187-4702-a9b8-c43516a45454.png)
+
+- Update User
 
 ![image](https://user-images.githubusercontent.com/72508846/172594360-685da79a-e593-4a06-983b-e703d72f848b.png)
+
+CRUD for Requests
+
+- Create Request
+
+![image](https://user-images.githubusercontent.com/72508846/172594073-2c89a5b7-f4fd-4c54-8877-2f4106af7a2d.png)
 
 - Update Request
 
