@@ -1,5 +1,6 @@
 # ITKarieraExam - Web application using ASP.NET Core
 
+Final exam - web application
 ( Държавен зрелостен изпит - уеб приложение ).
 
 Theme - Information system for airconditioners and users.
